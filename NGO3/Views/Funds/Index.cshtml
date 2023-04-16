@@ -1,0 +1,46 @@
+﻿@model IEnumerable<NGO3.Models.Fund>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>List Of Funds</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Donation.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserData.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationMoney)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Donation.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserData.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationMoney)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Fid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Fid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Fid })
+        </td>
+    </tr>
+}
+
+</table>

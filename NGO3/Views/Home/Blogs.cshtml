@@ -1,0 +1,40 @@
+﻿@model IEnumerable<NGO3.Models.Blog>
+
+@{
+    ViewBag.Title = "Blogs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="container">
+    <h2>Blogs</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BlogTital)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlogContent)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlogTital)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlogContent)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>

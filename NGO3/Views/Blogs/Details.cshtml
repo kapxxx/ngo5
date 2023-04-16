@@ -1,0 +1,35 @@
+﻿@model NGO3.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Blog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BlogTital)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BlogTital)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BlogContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BlogContent)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BlogId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

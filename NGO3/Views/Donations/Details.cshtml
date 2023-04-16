@@ -1,0 +1,110 @@
+﻿@model NGO3.Models.Donation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Donation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TargetAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RaisedAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RaisedAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TargetReachDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetReachDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsApproved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsApproved)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdharCardNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdharCardNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdby)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    
+    @Html.ActionLink("Approve", "ApproveDonation", new { id = Model.DId }) |
+
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

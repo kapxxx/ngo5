@@ -1,0 +1,78 @@
+﻿@model IEnumerable<NGO3.Models.Donation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <h6><b>Donation Type</b></h6>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        
+        
+        <th>
+            @Html.DisplayNameFor(model => model.TargetAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RaisedAmount)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Reason)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsApproved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdharCardNumber)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+       
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.TargetAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RaisedAmount)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Reason)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsApproved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdharCardNumber)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DId })
+        </td>
+    </tr>
+}
+
+</table>

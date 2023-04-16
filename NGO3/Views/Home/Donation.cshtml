@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Donation";
+}
+
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap hero-cap2 pt-20 text-center">
+                            <h2>Donations </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!-- Our Cases Start -->
+    <div class="our-cases-area section-padding30">
+        <div class="container">
+            <div class="row">
+
+                @{
+                    foreach (var item in @ViewBag.donationlist)
+                    {
+
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-cases mb-40">
+                                <div class="cases-img">
+                                  @*  <img src="~/Content/assets/img/gallery/case1.png" alt="">*@
+                                    <img src="@Url.Content("~/Content/DonationImage/"+item.Image)" alt="Donation Image">
+                                </div>
+                                <div class="cases-caption">
+                                    <h3><a href="#">@item.Name</a></h3>
+                                    <p>@item.Description</p>
+                                    <!-- Progress Bar -->
+                                    <div class="single-skill mb-15">
+                                        <div class="bar-progress">
+                                            <div id="bar1" class="barfiller">
+                                                <div class="tipWrap">
+                                                    <span class="tip"></span>
+                                                </div>
+                                                <span class="fill" data-percentage="70"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- / progress -->
+                                    <div class="prices d-flex justify-content-between">
+                                        <p>Raised:<span> @item.RaisedAmount</span></p>
+                                        <p>Goal:<span> @item.TargetAmount</span></p>
+                                    </div>
+                                    @if (item.RaisedAmount >= item.TargetAmount)
+                                    {
+                                       <h1><span class="badge badge-primary">Successfully Raised ⭐</span></h1>
+                                    }
+                                    else
+                                    {
+
+                                    <a href="@Url.Action("AddFund", "Home", new { id = item.DId })" class="btn btn-default">Add Donation</a>
+                                    }
+                                    @*  <button class="btn btn-default">Add Donation</button>*@
+
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                }
+                @* -------X---------For loop--------X------- *@
+            </div>
+        </div>
+    </div>
+    <!-- Our Cases End -->
+</main>
+
